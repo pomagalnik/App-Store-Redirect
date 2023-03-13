@@ -1,0 +1,17 @@
+# App-Store-Redirect
+
+<script>
+var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Huawei Phone must come first because its UA also contains "Android"
+    if (userAgent.includes("HUAWEI")) {
+       window.location.replace("https://appgallery.huawei.com/app/X-X-X");
+    } else if (userAgent.includes("Android")) {
+        window.location.replace("https://play.google.com/store/apps/X-X-X");
+    } else if (userAgent.includes("iPhone")) {
+        window.location.replace("https://apps.apple.com/us/app/X-X-X");
+    } else {
+        //cant be sure about device, so redirect to home page
+        window.location.replace("https://www.pomagalnik.com");
+    }
+</script>
